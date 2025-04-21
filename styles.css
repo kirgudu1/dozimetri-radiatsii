@@ -1,10 +1,10 @@
-﻿@import url('css2');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
 
 
 /* ======== Общие стили ======== */
 body {
     font-family: Arial, sans-serif; /* Шрифт сайта */
-    background: #f5f5f5 url("patterns/cubes.png"); /* Текстура */
+    background: #f5f5f5 url("https://www.transparenttextures.com/patterns/cubes.png"); /* Текстура */
     color: #333; /* Основной цвет текста */
     margin: 0;
     padding: 0;
@@ -21,7 +21,7 @@ body {
     justify-content: flex-start;
     align-items: center;
     background: #ffcc00; /* Основной жёлтый цвет */
-    background-image: url('patterns/asfalt-light.png'); /* Текстура */
+    background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png'); /* Текстура */
     background-size: auto;
     background-repeat: repeat;
     padding: 10px 20px; /* Уменьшаем отступы */
@@ -2031,3 +2031,25 @@ html {
   from { opacity: 0; transform: translateY(-4px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* ======== Mobile layout fix: описание под заголовком ======== */
+@media (max-width: 768px) {
+  /* Для каждого пункта убираем любые flex/inline-настройки и ставим блоки */
+  .video-chapters ul li {
+    display: block !important;
+  }
+
+  /* Ссылка становится блочным элементом */
+  .video-chapters ul li > a {
+    display: block;
+    margin-bottom: 6px; /* чуть отступа до описания */
+  }
+
+  /* Описание также блочным и без отступа слева */
+  .video-chapters ul li .chapter-desc {
+    display: block;
+    margin: 0 0 12px 0;
+    padding-left: 0;
+  }
+}
+
